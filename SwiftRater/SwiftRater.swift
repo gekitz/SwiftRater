@@ -150,13 +150,8 @@ import StoreKit
     }
     
     public static func rateApp() {
-        NSLog("[SwiftRater] Trying to show review request dialog.")
-        if #available(iOS 10.3, *), SwiftRater.useStoreKitIfAvailable {
-            SKStoreReviewController.requestReview()
-        } else {
-            SwiftRater.shared.rateAppWithAppStore()
-        }
-        
+        NSLog("[SwiftRater] Go to app store and show the rating view")
+        SwiftRater.shared.rateAppWithAppStore()
         UsageDataManager.shared.isRateDone = true
     }
 
